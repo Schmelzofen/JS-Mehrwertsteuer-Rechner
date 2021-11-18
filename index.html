@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TomatoBank MwSt</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="container1">
+          <form action="" onsubmit="return false">
+            <h1>Was soll berechnet werden?</h1>
+            <div class="block1">
+              <div class="block1-1">
+                <input
+                  type="radio"
+                  name="mwst"
+                  onchange="show()"
+                  id="mwstDrauf"
+                  checked
+                  onclick="berechnen()"
+                />
+                <label for="aufschlag"
+                  >Mehrwertsteuer aufschlagen (Netto zu Brutto)</label
+                >
+              </div>
+              <div class="block1-2">
+                <input
+                  type="radio"
+                  name="mwst"
+                  id="mwstRunter"
+                  onchange="show()"
+                  onclick="berechnen()"
+                />
+                <label for="abzug"
+                  >Mehrwertsteuer abziehen (Brutto zu Netto)</label
+                >
+              </div>
+            </div>
+            <div class="block2">
+              <p>Mehrwertsteuersatz</p>
+              <input
+                type="radio"
+                name="mwst1"
+                id="neunzehn"
+                onclick="berechnen()"
+              />
+              <label for="mwst">19%</label>
+              <input
+                type="radio"
+                name="mwst1"
+                id="sieben"
+                onclick="berechnen()"
+              />
+              <label for="mwst">7%</label>
+            </div>
+            <div class="block3">
+              <p id="betragFeld"></p>
+              <input
+                type="text"
+                name=""
+                id="eingabe"
+                placeholder="Betrag eingeben"
+              />
+              <button onclick="berechnen()">Berechnen</button>
+            </div>
+          </form>
+        </div>
+        <div class="container2">
+          <p>Ergebnis</p>
+          <div class="container2-1">
+            <p>Mehrwertsteuerbetrag</p>
+            <p id="ergebnis1"></p>
+            <p id="bruttoOderNetto" onchange="show()"></p>
+            <p id="ergebnis2"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
